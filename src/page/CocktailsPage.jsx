@@ -23,7 +23,7 @@ const CocktailsPage = () => {
                 const cocktailsInjson = await cocktailsResponse.json()
                 //Je déclare une nouvelle variable pour récuper le fichier JSON. Je dois également lui faire faire passer le mot-clé await
                 setCocktails(cocktailsInjson.drinks)
-                // Je stocke ensuite le fichier dans setCcoktails
+                // Je stocke ensuite le fichier dans setCocktails
             })();
         }
 
