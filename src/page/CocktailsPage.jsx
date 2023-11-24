@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const CocktailsPage = () => {
 
     const [cocktails, setCocktails] = useState (null)
 
-    if (!cocktails){
+    useEffect (()=>{
     //     fetch ("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=")
     //         .then((cocktailsResponse)=>{
     //         return (
@@ -25,7 +25,8 @@ const CocktailsPage = () => {
                 setCocktails(cocktailsInjson.drinks)
                 // Je stocke ensuite le fichier dans setCocktails
             })();
-        }
+        },[]);
+
 
     return (
         <main>
@@ -43,7 +44,7 @@ const CocktailsPage = () => {
             })}
         </>
         ):(
-            <p>Cocktails en cours de chargement</p>
+            <img src="https://i.gifer.com/ZZ5H.gif" alt="spinner" />
         )}
         </main>
     )
