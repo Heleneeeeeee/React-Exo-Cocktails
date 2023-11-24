@@ -7,7 +7,7 @@ const RandomCocktailPage = () => {
 
 useEffect(() => {
 // Si la valeur n'est pas null elle va passer les étapes suivantes jusqu'à récupérer le fichier. Si jamais c'est null, les étapes vont être reproduit à chaque fois
-// UseEffect est une fonction qui permet de recharger le composant à certains moment. Le tableau vide permet de lui signifier qu'il va s'eécuter qu'une seule fois
+// UseEffect est une fonction qui permet de recharger le composant à certains moment. Le tableau vide permet de lui signifier qu'il va s'exécuter qu'une seule fois
 (async () => {
     const randomCocktailResponse = await fetch ("https://www.thecocktaildb.com/api/json/v1/1/random.php")
     //Je déclare une variable qui a pour fonction de récupérer l'API de l'url en utilisant fetch. Puisqu'elle est asynchrone je dois lui passer
