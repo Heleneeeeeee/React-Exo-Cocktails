@@ -5,7 +5,7 @@ const CocktailsDetailsPage = () => {
 
     const {id} = useParams();
 
-    const [cocktails, setCocktail] = useState(null)
+    const [cocktail, setCocktail] = useState(null)
 
     useEffect(()=>{
         (async() =>{
@@ -19,9 +19,8 @@ const CocktailsDetailsPage = () => {
     
     return (
         <main>
-            {cocktails? (
+            {cocktail? (
             <>
-                {cocktails.map((cocktail)=>{
                 return (
                     <article>
                         <>
@@ -32,7 +31,6 @@ const CocktailsDetailsPage = () => {
                         </>    
                     </article>
                 );
-                })}
             </>
         ):(
             <p>Aucun ingrédients trouvés</p>
