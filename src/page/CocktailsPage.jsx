@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const CocktailsPage = () => {
@@ -35,10 +36,15 @@ const CocktailsPage = () => {
                 {cocktails.map((cocktail)=>{
                 return (
                 <article>
+                    
+                    <Link to ={`/cocktails/details/${cocktail.idDrink}`}>
+                    <>
                     <h2>{cocktail.strDrink}</h2>
                     <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-                    <p>Categorie : {cocktail.strCategory}</p>
-                    <p>Instructions : {cocktail.strInstructions}</p>
+                    <button>Voir en détails</button>
+                    </>
+                    </Link>
+                    
                 </article>
                 );
             })}
