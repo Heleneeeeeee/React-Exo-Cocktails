@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import CocktailCard from "../component/CocktailCard";
 
 const RandomCocktailPage = () => {
 
@@ -33,14 +33,8 @@ useEffect(() => {
         <main>
         {randomCocktail != null ? (
 //Je retourne ensuite la variable RandomCocktail en lui utilisant un opérateur ternaire. Si Random Cocktail n'est pas nul alors 
-            <article>
-                <Link to ={`/cocktails/details/${randomCocktail.idDrink}`}>
-                <h2>{randomCocktail.strDrink}</h2>
-{/* elle affiche le nom du cocktail */}
-                <img src={randomCocktail.strDrinkThumb} alt="" />
-                </Link>
-            </article>
-            
+           <CocktailCard cocktailToDisplay = {randomCocktail}/>
+// {/* elle affiche le nom du cocktail */}
             ):(
                 <img src="https://i.gifer.com/ZZ5H.gif" alt="spinner" />
 // sinon un spinner s'affichera pour patienter

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import CocktailCard from "../component/CocktailCard";
 
 
 const CocktailsPage = () => {
@@ -35,17 +35,8 @@ const CocktailsPage = () => {
             <>
                 {cocktails.map((cocktail)=>{
                 return (
-                <article>
+                    <CocktailCard cocktailToDisplay = {cocktail}/>
                     
-                    <Link to ={`/cocktails/details/${cocktail.idDrink}`}>
-                    <>
-                    <h2>{cocktail.strDrink}</h2>
-                    <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-                    <button>Voir en détails</button>
-                    </>
-                    </Link>
-                    
-                </article>
                 );
             })}
         </>
