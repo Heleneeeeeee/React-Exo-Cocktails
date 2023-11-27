@@ -16,7 +16,7 @@ const CocktailCard = ({cocktailToDisplay}) =>{
             <h2>{cocktailToDisplay.strDrink}</h2>
             <img src={cocktailToDisplay.strDrinkThumb} alt={cocktailToDisplay.strDrink} />
             <Link to ={`/cocktails/details/${cocktailToDisplay.idDrink}`}>Voir plus de détails</Link>
-            <button onClick={(event)=>handleDeleteCocktail(event,cocktailToDisplay.idDrink)}></button>
+            <button onClick={(event)=>handleDeleteCocktail(event,cocktailToDisplay.idDrink)}>Supprimer le cocktail</button>
             {/* Je déclenche un eventlistener sur mon bouton  et je lui fais passer en paramètre l'ID du cocktail que j'ai cliqué*/}
             </>          
         </article>
