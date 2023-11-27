@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const RandomCocktailPage = () => {
 
@@ -33,9 +34,11 @@ useEffect(() => {
         {randomCocktail != null ? (
 //Je retourne ensuite la variable RandomCocktail en lui utilisant un opérateur ternaire. Si Random Cocktail n'est pas nul alors 
             <article>
+                <Link to ={`/cocktails/details/${randomCocktail.idDrink}`}>
                 <h2>{randomCocktail.strDrink}</h2>
 {/* elle affiche le nom du cocktail */}
                 <img src={randomCocktail.strDrinkThumb} alt="" />
+                </Link>
             </article>
             
             ):(

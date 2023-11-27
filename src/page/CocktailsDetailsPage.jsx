@@ -13,15 +13,13 @@ const CocktailsDetailsPage = () => {
             const cocktailDetailsInJS = await cocktailResponse.json()
             console.log(cocktailDetailsInJS)
 
-            setCocktail(cocktailDetailsInJS.drinks)
+            setCocktail(cocktailDetailsInJS.drinks[0])
         })();
     },[]);
     
     return (
         <main>
             {cocktail? (
-            <>
-                return (
                     <article>
                         <>
                         <h2>{cocktail.strDrink}</h2>
@@ -30,8 +28,6 @@ const CocktailsDetailsPage = () => {
                         <p>{cocktail.strInstructions}</p>
                         </>    
                     </article>
-                );
-            </>
         ):(
             <p>Aucun ingrédients trouvés</p>
         )}
